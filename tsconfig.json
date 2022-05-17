@@ -3,12 +3,12 @@
     "target": "es2016",
     "module": "commonjs",
     "rootDir": "./",
-    "outDir": "./dist",
+    "outDir": "./build",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true
   },
   "include": ["**/*"],
-  "exclude": ["dist", ".vscode"]
+  "exclude": ["dist", ".vscode", "build"]
 }
