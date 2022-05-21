@@ -1,7 +1,11 @@
 import * as booksService from "../services/service";
 
 const mutation = {
-  addBook: async ({ title, author, description }: Book, context: any) => {
+  addBook: async (
+    _: any,
+    { title, author, description }: Book,
+    context: any
+  ) => {
     try {
       const book = await booksService.createBook({
         title,
@@ -24,6 +28,7 @@ const mutation = {
     }
   },
   updateBook: async (
+    _: any,
     { id, title, author, description }: Book & { id: string },
     context: any
   ) => {
@@ -53,7 +58,7 @@ const mutation = {
       };
     }
   },
-  deleteBook: async ({ id }: { id: string }, contex: any) => {
+  deleteBook: async (_: any, { id }: { id: string }, contex: any) => {
     // const book = books.find(book => book.id === id)
 
     // books = books.filter(book => book.id !== id)

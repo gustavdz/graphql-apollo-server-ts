@@ -18,6 +18,7 @@
   "author": "Gustavo Decker",
   "license": "ISC",
   "dependencies": {
+    "apollo-server": "^3.7.0",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-graphql": "^0.12.0",
