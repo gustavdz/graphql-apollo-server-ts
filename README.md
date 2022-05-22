@@ -1,6 +1,6 @@
 # graphql-express-ts
 
-skelleton for graphql api with express, typescript and mongoDB
+skelleton for graphql api with apollo server, typescript and mongoDB
 
 ## Quick Start
 

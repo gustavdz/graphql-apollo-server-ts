@@ -1,7 +1,7 @@
 {
   "name": "graphql-express-ts",
   "version": "1.0.0",
-  "description": "api project with graphql express and typescript ",
+  "description": "skelleton for graphql api with apollo server, typescript and mongoDB",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
   },
   "keywords": [
     "graphql",
-    "express",
+    "apollo server",
     "typescript",
     "skelleton"
   ],

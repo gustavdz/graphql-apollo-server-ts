@@ -58,9 +58,6 @@ const mutation = {
     }
   },
   deleteBook: async (_: any, { id }: { id: string }, contex: any) => {
-    // const book = books.find(book => book.id === id)
-
-    // books = books.filter(book => book.id !== id)
     try {
       const book = await booksService.deleteBook(id);
       if (!book) {
