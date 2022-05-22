@@ -1,6 +1,7 @@
 import { ApolloServer } from "apollo-server";
 import { ApolloServerPluginLandingPageLocalDefault } from "apollo-server-core";
 import { schema, resolvers } from "./schema";
+import envs from "./envs";
 import db from "./db/connect";
 
 db.once("open", async () => {
@@ -22,5 +23,5 @@ export const server = new ApolloServer({
 const port = process.env.PORT || 3000;
 
 server.listen({ port }).then(({ url }) => {
-  console.log(`🚀  Server  ready at ${url}`);
+  console.log(`🚀  Server  ready at ${url}${envs.graphqlPath}`);
 });
