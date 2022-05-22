@@ -1,4 +1,4 @@
-# graphql-express-ts
+# graphql-apollo-ts
 
 skelleton for graphql api with apollo server, typescript and mongoDB
 
