@@ -1,4 +1,5 @@
 import * as booksService from "../services/service";
+import { Author } from "../../authors/api/mutation";
 
 const mutation = {
   addBook: async (
@@ -12,8 +13,6 @@ const mutation = {
         author,
         description,
       });
-      // const book = { id: `${books.length+1}`, title, author, description }
-      // books.push(book)
       return {
         data: book,
         ok: true,
@@ -88,7 +87,7 @@ const mutation = {
 interface Book {
   title: string;
   description: string;
-  author: string;
+  author: Author;
 }
 
 export default mutation;

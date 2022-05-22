@@ -1,4 +1,5 @@
 import { Schema, model, Model } from "mongoose";
+import { IAuthor } from "../../authors/model/authors";
 
 const bookSchema: Schema = new Schema<IBook>({
   title: {
@@ -10,8 +11,9 @@ const bookSchema: Schema = new Schema<IBook>({
     required: true,
   },
   author: {
-    type: String,
+    type: Schema.Types.ObjectId,
     required: true,
+    ref: "Authors",
   },
 });
 
@@ -19,7 +21,7 @@ export interface IBook {
   _id: string;
   title: string;
   description: string;
-  author: string;
+  author: IAuthor;
 }
 
 const BookModel: Model<IBook> = model("Books", bookSchema);

@@ -1,7 +1,8 @@
 import BookModel from "../model/books";
+import { Author } from "../../authors/api/mutation";
 
 export const getAllBooks = async (limit: number) => {
-  return await BookModel.find({}).limit(limit);
+  return await BookModel.find({}).limit(limit).populate("author");
 };
 
 export const getBookById = async (id: string) => {
@@ -15,7 +16,7 @@ export const createBook = async ({
 }: {
   title: string;
   description: string;
-  author: string;
+  author: Author;
 }) => {
   return await BookModel.create({ title, description, author });
 };
@@ -26,9 +27,9 @@ export const updateBook = async (
     title,
     description,
     author,
-  }: { title: string; description: string; author: string }
+  }: { title: string; description: string; author: Author }
 ) => {
-  const update: { title?: string; description?: string; author?: string } = {};
+  const update: { title?: string; description?: string; author?: Author } = {};
   if (title) update.title = title;
   if (description) update.description = description;
   if (author) update.author = author;
